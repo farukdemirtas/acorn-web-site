@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+/*
+  Açık / teknolojik tema: buzlu yüzeyler, cyan vurgu, mürekkep metin.
+  --oak-neon → accent (buton ve vurgular).
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --surface-page: #f0f4f9;
+  --surface-0: #f8fafc;
+  --surface-1: #ffffff;
+  --surface-2: #eef2f6;
+  --surface-border: rgba(15, 23, 42, 0.08);
+  --accent: #0891b2;
+  --accent-dim: rgba(8, 145, 178, 0.12);
+  --accent-fg: #ffffff;
+  --brand-green: #059669;
+  --oak-neon: var(--accent);
+  --background: var(--surface-page);
+  --foreground: #0f172a;
+  --foreground-muted: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-scan-line {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* “oak-dark” = mürekkep (koyu metin), siyah zemin değil */
+  --color-oak-dark: #0f172a;
+  --color-oak-page: var(--surface-page);
+  --color-oak-surface: var(--surface-1);
+  --color-oak-elevated: var(--surface-2);
+  --color-oak-green: #047857;
+  --color-oak-muted: #64748b;
+  --color-oak-cream: #e8eef4;
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: var(--surface-page);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
 }
