@@ -8,4 +8,4 @@ test -f .next/standalone/server.js || { echo "Önce: npm run build"; exit 1; }
 cp -r public .next/standalone/public
 mkdir -p .next/standalone/.next
 cp -r .next/static .next/standalone/.next/static
-echo "Tamam. Çalıştırma: cd .next/standalone && HOSTNAME=0.0.0.0 PORT=3000 node server.js"
+echo "Tamam. Çalıştırma: cd .next/standalone && HOSTNAME=0.0.0.0 PORT=3030 pm2 start server.js --name oakacorn"
