@@ -1,9 +1,9 @@
-# oakacorn.site → 37.148.212.3 üzerinde Node (127.0.0.1:3000) önüne örnek Nginx.
+# oakacorn.site — Node upstream portu PM2’deki PORT ile aynı olmalı (üretim: 3030).
 # Debian/Ubuntu: /etc/nginx/sites-available/oakacorn → sites-enabled symlink
 # certbot --nginx -d oakacorn.site -d www.oakacorn.site
 
 upstream next_oakacorn {
-    server 127.0.0.1:3000;
+    server 127.0.0.1:3030; # PM2: PORT=3030 ile aynı
     keepalive 64;
 }
 
